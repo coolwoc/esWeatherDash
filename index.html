@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+</head>
+<body>
+<div class="main">
+    <div class="search-wrapper">
+        <form>
+            <input type="text" name="auto" id="city" placeholder="Input location" autocomplete="off">
+            <button type="button" id="button-autocomplete" class="search"></button>
+            <datalist id="result">
+            </datalist>
+        </form>
+    </div>
+    <div class="weather-wrapper">
+        <div id="weather-today" class="weather-today-wrapper">
+            <h2 id="today-location" class="location">Location Description</h2>
+            <span class="icon"></span>
+            <p id="today-temp" class="temp">28</p>
+            <p id="today-description" class="desc">Few clouds</p>
+            <ul class="today-list">
+                <li class="list-item">
+                    <span class="header">Feels like: </span><span id="today-feels" class="data">13.57</span>
+                </li>
+                <li class="list-item">
+                    <span class="header">Wind Speed: </span><span id="today-wind" class="data">6.7</span>
+                </li>
+                <li class="list-item">
+                    <span class="header">Visibility: </span><span id="today-visibility" class="data">10000</span>
+                </li>
+                <li class="list-item">
+                    <span class="header">Humidity: </span><span id="today-humidity" class="data">68</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="weather-weekly-wrapper" class="weather-wrapper-week">
+        <ul id="weather-weekly" class="weather-week"></ul>
+    </div>
+    <div class="chart-wrapper">
+        <div class="chart-header">
+            <h2 class="title">Hourly</h2>
+            <ul id="hourly-list" class="time-list">
+                <li class="time-item"><a href="javascript:void(0)" id="hourly6">6 hr</a></li>
+                <li class="time-item"><a href="javascript:void(0)" id="hourly12">12 hr</a></li>
+                <li class="time-item"><a href="javascript:void(0)" id="hourly24">24 hr</a></li>
+                <li class="time-item"><a href="javascript:void(0)" id="hourly48">48 hr</a></li>
+            </ul>
+        </div>
+        <canvas id="line-chart" width="300" height="100"></canvas>
+    </div>
+    <div id="day-detail-wrapper" class="day-details">
+        <h2 class="title">Day Details</h2>
+        <ul class="details-list">
+            <li class="list-item">
+                <div class="item-wrapper">
+                    <div class="sun-wrapper">
+                        <span class="icon icon-sunrise"></span>
+                        <div class="item-sun">
+                            <h3>Sunrise</h3>
+                            <span id="sunrise-description" class="time">14:30 am</span>
+                        </div>
+                    </div>
+                    <div class="sun-wrapper">
+                        <span class="icon icon-sunset"></span>
+                        <div class="item-sun">
+                            <h3>Sunset</h3>
+                            <span id="sunset-description" class="time">14:30 pm</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-item">
+                <div class="item-wrapper">
+                    <ul class="item-details">
+                        <li class="item">
+                            <h3>Pressure</h3>
+                            <span id="pressure-description" class="details">117</span>
+                        </li>
+                        <li class="item">
+                            <h3>Humidity</h3>
+                            <canvas id="humidity-doughnut-chart" class="chart-doughnut" width="300" height="100"></canvas>
+                        </li>
+                        <li class="item">
+                            <h3>UV Index</h3>
+                            <canvas id="uv-doughnut-chart" class="chart-doughnut" width="300" height="100"></canvas>
+                        </li>
+                        <li class="item">
+                            <h3>Max Wind</h3>
+                            <canvas id="wind-doughnut-chart" class="chart-doughnut" width="300" height="100"></canvas>
+                        </li>
+                    </ul>
+                </div>
+            </li>   
+        </ul>
+    </div>
+    <div id="load">Loading...</div>
+    <div id="weather">
+        <h1 id="weatherCity">City Name</h1>
+        <div id="weatherDescription">Weather Description</div>
+        <div id="weatherTemperature">Temperature</div>
+    </div>
+    <div class="footer">
+        <p>coolwoc &copy; 2020</p>
+    </div>
+</div>
+<script src="./dist/bundle.js"></script>
+</html>
