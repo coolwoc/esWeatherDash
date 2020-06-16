@@ -92,19 +92,13 @@ function hinterAutoComplete(event) {
 }
 
 function getCodeHandler(searchValue) {
-    // we toggle open-class
     let SEARCH_STRING = '';
     let openInputSearch = ELEMENTS.ELEMENT_SEARCH_CITY;
     openInputSearch.classList.toggle('isOpen'); // we toggle class here
 
-    // if(SEARCH_STRING.length == 0) {
-    //     alert('Please enter a city for autocomplete');
-    // }
-
     ELEMENTS.ELEMENT_SEARCH_CITY.value.trim().length == 0 ? SEARCH_STRING = searchValue : SEARCH_STRING = ELEMENTS.ELEMENT_SEARCH_CITY.value.trim();
 
     // we make request
-    //const URL = 'https://eu1.locationiq.com/v1/search.php?key=' + APPIQ_ID + '&q=' + SEARCH_STRING + '&format=json';
     const URL = 'https://api.locationiq.com/v1/autocomplete.php?key='+ APPIQ_ID +'&q=' + SEARCH_STRING;
 
     Http.fetchInterceptor(URL)
