@@ -7,8 +7,8 @@ import Chart from 'Chart.js';
 import { linealHourChart } from './modules/app.linealHourChart';
 import { DoughnutChart } from './modules/app.doughnutChart';
 
-const APP_ID = 'b92454397c67530776e9edcee5bc2da8';
-const APPIQ_ID = '35880f4d8bbaee';
+const APP_ID = 'use-your-own-key-here';
+const APPIQ_ID = 'use-your-own-key-here';
 
 // get location by city parse current data from browser navigator geolocation
 getUserGeolocation();
